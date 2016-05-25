@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Analytic</title>
+</head>
+  <script src="./store.js"></script>
+  <script src="./prismatic_util.js"></script>
+  <script src="./track.js"></script>
+  
+  <script src="./prismatic.js"></script>
+
+  <script type="text/javascript">
+    
+      // Create a queue, but don't obliterate an existing one!
+      PR.analytic.init({
+        app_key: "somekey",
+        // apiUrl: "http://localhost:8080/api/v1/events",
+        apiUrl: "http://localhost:8080/api/v1/events",
+        debug:true
+      })
+    
+  </script>  
+
+<body>
+
+</body>
+</html>
+
