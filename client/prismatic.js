@@ -41,9 +41,7 @@ PR = (function(window, document, Prismatic){
     //   var url = Prismatic.apiUrl + path;
     // }
     trackPageView: function(){
-      {
-        pageDefaults
-      }
+      Prismatic.analytic.track("page_view",{})
     }
 
   };
