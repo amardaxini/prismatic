@@ -60,6 +60,8 @@ Get Event from client via post request and push raw event to rabbitmq for furthe
         go get github.com/itsjamie/gin-cors
         go run prismatic/collector/prismatic_collector.go
   * Local Run
+    cd $GO_ROOT/src/github.com/amardaxini/
+    copy prismatic_collector
     PORT=8081 AMQP_URL=amqp://guest:guest@localhost:5672/ go run prismatic_collector.go
   * Heroku URL
     http://prismatic-collector.herokuapp.com/api/v1/events

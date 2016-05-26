@@ -24,6 +24,7 @@ import (
     SessionId string `json:"session_id" binding:"required"`
     Properties map[string]interface {} `json:"properties"`
     ClientIp string `json:"client_ip"`
+    EventName string `json:"event_name" binding:"required"`
 
   
 }
