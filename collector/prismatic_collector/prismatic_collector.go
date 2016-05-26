@@ -8,6 +8,7 @@ import (
   "io/ioutil"
   "bytes"
   "encoding/json"
+  "os"
 
 ) 
   type RbmqConfig struct {
@@ -29,8 +30,7 @@ import (
   func initRabbitMq() *RbmqConfig {
 
     config := &RbmqConfig{}
-
-    config.conn, config.rbmqErr = amqp.Dial("amqp://guest:guest@localhost:5672/")
+    config.conn, config.rbmqErr = amqp.Dial(os.Getenv("AMQP_URL") )
     failOnError(config.rbmqErr, "Failed to connect to RabbitMQ")
     config.ch, config.rbmqErr = config.conn.Channel()
     failOnError(config.rbmqErr, "Failed to open a channel")
@@ -65,8 +65,8 @@ import (
     {
       v1.POST("/events", eventEndpoint)
     }
-   
-    router.Run() // listen and server on 0.0.0.0:8080
+    port := os.Getenv("PORT")
+    router.Run(":"+port) // listen and server on 0.0.0.0:8080
   }
 
   func eventEndpoint(c *gin.Context){

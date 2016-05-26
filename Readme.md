@@ -60,10 +60,15 @@ Get Event from client via post request and push raw event to rabbitmq for furthe
         go get github.com/itsjamie/gin-cors
         go run prismatic/collector/prismatic_collector.go
 
-
-
-
 # Enrichment (TODO)
+* Install fregeoip service 
+  * https://github.com/fiorix/freegeoip
+  * Heroku url: https://prismatic-geoip.herokuapp.com/json/<ip-address>
+  * Move service to docker or used paid plan and configure for redis service instead of tmp file
 * Write worker for get operating system and broweser detail from user agent
+  * We can use sneaker for background jobs
+  * https://github.com/fnando/browser gem can be usefull for getting browser information from useragent
 * write worker for get country,state,city info from geoip service
+  * We can call freegeoip service to get user country information
+* After processing push clean data to elastic search and postgres schema
 
