@@ -24,7 +24,9 @@ class EventEnrichWorker
         "page_search"=>event_msg["context_info"] && event_msg["context_info"]["search"],
         "user_agent"=>event_msg["browser"],
         "screen_width"=>event_msg["screen_width"],
-        "screen_width"=>event_msg["screen_height"]
+        "screen_width"=>event_msg["screen_height"],
+        "event_time"=>event_msg["event_time"],
+        "collector_event_time"=>event_msg["collector_time"]
       }  
       if event_msg["browser"]
         browser = BrowserEnrichmentService.new(event_msg["browser"]["user_agent"])

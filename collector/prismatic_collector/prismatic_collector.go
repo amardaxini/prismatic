@@ -31,7 +31,7 @@ type EventJson struct {
 	EventName     string                 `json:"event_name" binding:"required"`
 	TrackerName   string                 `json:"tracker_name"  binding:"required"`
 	EventTime     string                 `json:"event_time"`
-	CollectorTime time.Time
+	CollectorTime time.Time              `json:"collector_time"`
 }
 
 func initRabbitMq() *RbmqConfig {
@@ -88,8 +88,8 @@ func eventEndpoint(c *gin.Context) {
 	// // Use the content
 	// var json EventJson
 
-	bodyString := string(bodyBytes)
-	fmt.Printf("%s", bodyString)
+	// bodyString := string(bodyBytes)
+	// fmt.Printf("%s", bodyString)
 	var event EventJson
 	json.Unmarshal(bodyBytes, &event)
 	event.ClientIp = c.ClientIP()
