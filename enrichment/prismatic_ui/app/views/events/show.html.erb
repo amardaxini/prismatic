@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @event.name %>
+  <%= @event.event_name %>
 </p>
 
 <p>
@@ -52,7 +52,7 @@
 
 <p>
   <strong>Ip:</strong>
-  <%= @event.ip %>
+  <%= @event.ip_address %>
 </p>
 
 <p>
@@ -107,7 +107,15 @@
 
 <p>
   <strong>Device:</strong>
-  <%= @event.device %>
+  <%= @event.device_type %>
+</p>
+<p>
+  <strong>Device:</strong>
+  <%= @event.device_name %>
+</p>
+<p>
+  <strong>Os:</strong>
+  <%= @event.os_name %>
 </p>
 
 <p>
@@ -115,10 +123,7 @@
   <%= @event.browser %>
 </p>
 
-<p>
-  <strong>Device:</strong>
-  <%= @event.device_id %>
-</p>
+
 
 <p>
   <strong>Event time:</strong>

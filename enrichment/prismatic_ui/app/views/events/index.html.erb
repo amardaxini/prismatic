@@ -2,94 +2,50 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-          Events
-          <span class="pull-right">
-            <%= link_to '+ New Event', new_event_path ,:class=>"btn btn-primary"%>
+        Events
+        <span class="pull-right">
+          <%= link_to '+ New Event', new_event_path ,:class=>"btn btn-primary"%>
         </span>  
       </header> 
       <div class="panel-body">
         <div class="adv-table">
           <table  class="display table table-bordered table-striped">
             <thead>
-              
+
               <tr>
-                                  <th>Name</th>
-                                  <th>Object</th>
-                                  <th>Object class</th>
-                                  <th>User</th>
-                                  <th>Session</th>
-                                  <th>Page url</th>
-                                  <th>Page path</th>
-                                  <th>Page referrer</th>
-                                  <th>Page search</th>
-                                  <th>User agent</th>
-                                  <th>Ip</th>
-                                  <th>Country code</th>
-                                  <th>Country name</th>
-                                  <th>Region code</th>
-                                  <th>Region name</th>
-                                  <th>City</th>
-                                  <th>Time zone</th>
-                                  <th>Latitude</th>
-                                  <th>Longitude</th>
-                                  <th>Zip code</th>
-                                  <th>Platform</th>
-                                  <th>Device</th>
-                                  <th>Browser</th>
-                                  <th>Device</th>
-                                  <th>Event time</th>
-                                  <th>Action class</th>
-                                  <th>Action type</th>
+                <th>Event Name</th>
+                <th>Object</th>
+                <th>Object class</th>
+                <th>User</th>
+                <th>Session</th>
                 
-                <th>Manage</th>
+                <th>Event time</th>
+                <th>Action class</th>
+                <th>Action type</th>
+                
               </tr>
             </thead>
             <tbody>
              <% @events.each do |event| %>
-                <tr>
-                                      <td><%= event.name %></td>
-                                      <td><%= event.object_id %></td>
-                                      <td><%= event.object_class %></td>
-                                      <td><%= event.user_id %></td>
-                                      <td><%= event.session_id %></td>
-                                      <td><%= event.page_url %></td>
-                                      <td><%= event.page_path %></td>
-                                      <td><%= event.page_referrer %></td>
-                                      <td><%= event.page_search %></td>
-                                      <td><%= event.user_agent %></td>
-                                      <td><%= event.ip %></td>
-                                      <td><%= event.country_code %></td>
-                                      <td><%= event.country_name %></td>
-                                      <td><%= event.region_code %></td>
-                                      <td><%= event.region_name %></td>
-                                      <td><%= event.city %></td>
-                                      <td><%= event.time_zone %></td>
-                                      <td><%= event.latitude %></td>
-                                      <td><%= event.longitude %></td>
-                                      <td><%= event.zip_code %></td>
-                                      <td><%= event.platform %></td>
-                                      <td><%= event.device %></td>
-                                      <td><%= event.browser %></td>
-                                      <td><%= event.device_id %></td>
-                                      <td><%= event.event_time %></td>
-                                      <td><%= event.action_class %></td>
-                                      <td><%= event.action_type %></td>
-                                    
-                  <td>
-                      <%= link_to 'Show', event %> |
-                      <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_event_path(event) %> |
-                     <%= link_to '<i class="fa fa-trash-o "></i> Delete'.html_safe, event, method: :delete, data: { confirm: 'Are you sure?' } %>
-                  
-                  </td>
-                </tr>
-              <% end %>
-              
-            </tbody>
-          </table>  
-        </div>    
-      </div>  
-     </section> 
-  </div>
+             <tr>
+              <td><%=link_to event.event_name,event_path(event) %></td>
+              <td><%= event.object_id %></td>
+              <td><%= event.object_class %></td>
+              <td><%= event.user_id %></td>
+              <td><%= event.session_id %></td>
+              <td><%= event.event_time %></td>
+              <td><%= event.action_class %></td>
+              <td><%= event.action_type %></td>
+
+            </tr>
+            <% end %>
+
+          </tbody>
+        </table>  
+      </div>    
+    </div>  
+  </section> 
+</div>
 </div>    
 
 
