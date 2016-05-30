@@ -1,0 +1,6 @@
+defaults: &defaults
+  geo_ip_url: <%= ENV['GEO_IP_URL'] || 'http://prismatic-geoip.herokuapp.com/json/' %>
+development:
+  <<: *defaults
+production:
+  <<: *defaults  

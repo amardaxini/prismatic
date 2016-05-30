@@ -54,6 +54,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    curb (0.8.8)
     debug_inspector (0.0.2)
     device_detector (0.8.2)
     devise (3.5.4)
@@ -144,6 +145,7 @@ GEM
       rdoc (~> 4.0)
     serverengine (1.5.11)
       sigdump (~> 0.2.2)
+    settingslogic (2.0.9)
     sigdump (0.2.4)
     slop (3.6.0)
     sneakers (2.3.5)
@@ -183,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  curb
   device_detector
   devise
   font-awesome-rails
@@ -194,6 +197,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  settingslogic
   sneakers
   spring
   turbolinks

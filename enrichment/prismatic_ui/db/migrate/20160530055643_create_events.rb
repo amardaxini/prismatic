@@ -18,7 +18,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :page_search
       t.string :user_agent
       
-      t.string :ip
+      t.string :ip_address
       t.string :country_code
       t.string :country_name
       t.string :region_code
