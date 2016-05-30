@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530050452) do
+ActiveRecord::Schema.define(version: 20160530055643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,44 @@ ActiveRecord::Schema.define(version: 20160530050452) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "object_id"
+    t.string   "object_class"
+    t.string   "action_class"
+    t.string   "action_type"
+    t.string   "app_id"
+    t.string   "app_name"
+    t.string   "user_id"
+    t.string   "session_id"
+    t.string   "tracker_name"
+    t.text     "page_url"
+    t.text     "page_path"
+    t.string   "page_referrer"
+    t.text     "page_search"
+    t.string   "user_agent"
+    t.string   "ip"
+    t.string   "country_code"
+    t.string   "country_name"
+    t.string   "region_code"
+    t.string   "region_name"
+    t.string   "city"
+    t.string   "time_zone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "zip_code"
+    t.string   "platform"
+    t.string   "device"
+    t.string   "browser"
+    t.string   "screen_width"
+    t.string   "screen_height"
+    t.string   "os_name"
+    t.datetime "event_time"
+    t.datetime "collector_event_time"
+    t.json     "properties"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
 end
