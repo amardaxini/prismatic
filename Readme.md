@@ -69,6 +69,9 @@ Get Event from client via post request and push raw event to rabbitmq for furthe
                
 
 # Enrichment (TODO)
+  go to enrichment/prismatic_ui
+  RUN : WORKER=EventEnrichWorker rake sneakers:run
+  
 * Install fregeoip service 
   * https://github.com/fiorix/freegeoip
   * Heroku url: https://prismatic-geoip.herokuapp.com/json/<ip-address>
