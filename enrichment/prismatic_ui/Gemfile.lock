@@ -41,7 +41,6 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    browser (2.1.0)
     builder (3.2.2)
     bunny (2.2.2)
       amq-protocol (>= 2.0.1)
@@ -56,6 +55,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+    device_detector (0.8.2)
     devise (3.5.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -181,9 +181,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  browser
   byebug
   coffee-rails (~> 4.1.0)
+  device_detector
   devise
   font-awesome-rails
   jbuilder (~> 2.0)

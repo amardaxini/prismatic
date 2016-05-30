@@ -49,5 +49,5 @@ end
 gem "devise"
 gem "font-awesome-rails"
 gem "kaminari"
-gem "browser"
+gem "device_detector"
 gem "sneakers"

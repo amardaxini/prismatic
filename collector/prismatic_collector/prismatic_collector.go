@@ -26,9 +26,11 @@ type EventJson struct {
 	SessionId     string                 `json:"session_id" binding:"required"`
 	Properties    map[string]interface{} `json:"properties"`
 	ClientIp      string                 `json:"client_ip"`
+	ScreenWidth   int                    `json:"screen_width"`
+	ScreenHeight  int                    `json:"screen_height"`
 	EventName     string                 `json:"event_name" binding:"required"`
-	TrackerName   string                 `json:"trackerName"  binding:"required"`
-	EventTime     string                 `json:"trackTime"`
+	TrackerName   string                 `json:"tracker_name"  binding:"required"`
+	EventTime     string                 `json:"track_time"`
 	CollectorTime time.Time
 }
 
@@ -86,8 +88,8 @@ func eventEndpoint(c *gin.Context) {
 	// // Use the content
 	// var json EventJson
 
-	// bodyString := string(bodyBytes)
-	// fmt.Printf("%s", bodyString)
+	bodyString := string(bodyBytes)
+	fmt.Printf("%s", bodyString)
 	var event EventJson
 	json.Unmarshal(bodyBytes, &event)
 	event.ClientIp = c.ClientIP()
