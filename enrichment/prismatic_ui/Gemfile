@@ -53,3 +53,4 @@ gem "device_detector"
 gem "sneakers"
 gem "curb"
 gem "settingslogic"
+gem 'puma'

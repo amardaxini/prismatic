@@ -1,0 +1,2 @@
+web: bundle exec puma -C config/puma.rb
+worker:  ENV['JOB_WORKER'] bundle exec rake sneakers:run 
