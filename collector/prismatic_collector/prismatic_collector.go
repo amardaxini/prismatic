@@ -30,7 +30,7 @@ type EventJson struct {
 	ScreenHeight  int                    `json:"screen_height"`
 	EventName     string                 `json:"event_name" binding:"required"`
 	TrackerName   string                 `json:"tracker_name"  binding:"required"`
-	EventTime     string                 `json:"track_time"`
+	EventTime     string                 `json:"event_time"`
 	CollectorTime time.Time
 }
 

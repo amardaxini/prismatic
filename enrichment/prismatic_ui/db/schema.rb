@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160530055643) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
+    t.string   "event_name"
     t.string   "object_id"
     t.string   "object_class"
     t.string   "action_class"

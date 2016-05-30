@@ -15,7 +15,7 @@ Track.prototype = {
       session_id: this.contextInfo.session_id,
       user_id: this.contextInfo.user_id,
       tracker_name: this.contextInfo.trackerName,
-      track_time: new Date().toUTCString(),
+      event_time: new Date().toUTCString(),
       screen_width: (screen && screen.width) ? screen.width : '',
       screen_height: (screen &&screen.height) ? screen.height : '',
 
