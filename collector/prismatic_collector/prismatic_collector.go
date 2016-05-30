@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"time"
 )
 
 type RbmqConfig struct {
@@ -19,14 +20,16 @@ type RbmqConfig struct {
 	rbmqErr error
 }
 type EventJson struct {
-	UserId      string                 `json:"user_id"`
-	ContextInfo map[string]interface{} `json:"context_info"`
-	Browser     map[string]interface{} `json:"browser"`
-	SessionId   string                 `json:"session_id" binding:"required"`
-	Properties  map[string]interface{} `json:"properties"`
-	ClientIp    string                 `json:"client_ip"`
-	EventName   string                 `json:"event_name" binding:"required"`
-	AppId       string                 `json:"app_id"  binding:"required"`
+	UserId        string                 `json:"user_id"`
+	ContextInfo   map[string]interface{} `json:"context_info"`
+	Browser       map[string]interface{} `json:"browser"`
+	SessionId     string                 `json:"session_id" binding:"required"`
+	Properties    map[string]interface{} `json:"properties"`
+	ClientIp      string                 `json:"client_ip"`
+	EventName     string                 `json:"event_name" binding:"required"`
+	TrackerName   string                 `json:"trackerName"  binding:"required"`
+	EventTime     string                 `json:"trackTime"`
+	CollectorTime time.Time
 }
 
 func initRabbitMq() *RbmqConfig {
@@ -88,6 +91,7 @@ func eventEndpoint(c *gin.Context) {
 	var event EventJson
 	json.Unmarshal(bodyBytes, &event)
 	event.ClientIp = c.ClientIP()
+	event.CollectorTime = time.Now().UTC()
 	rawEvent, _ := json.Marshal(event)
 	fmt.Printf("%s", rawEvent)
 	err := rbconfig.ch.Publish(

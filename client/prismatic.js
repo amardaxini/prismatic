@@ -10,7 +10,7 @@ PR = (function(window, document, Prismatic){
     init: function(ob){
       if (!inited) {
         inited = true;
-        Prismatic.analytic.appId = ob.appId || Prismatic.analytic.appId || null;
+        Prismatic.analytic.trackerName = ob.trackerName || Prismatic.analytic.trackerName || null;
         Prismatic.analytic.ip_address = ob.ip_address || Prismatic.ip_address || null;
         Prismatic.analytic.session_id = Prismatic.analytic.session_id || Prismatic.util.getSessionId();
         Prismatic.analytic.userId = ob.userId || null;
@@ -36,7 +36,7 @@ PR = (function(window, document, Prismatic){
         browser: Prismatic.util.browserInfo(),
         session_id: Prismatic.analytic.session_id,
         user_id: Prismatic.analytic.userId,
-        appId: Prismatic.analytic.appId
+        trackerName: Prismatic.analytic.trackerName
 
       }
     },

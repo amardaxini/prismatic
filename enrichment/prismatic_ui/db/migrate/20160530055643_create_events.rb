@@ -26,6 +26,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :browser
       t.string :device_id
       t.datetime :event_time
+      t.datetime :collector_event_time
+      t.string :tracker_id 
       t.string :action_class
       t.string :action_type
       t.json :properties

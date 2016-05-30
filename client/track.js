@@ -14,7 +14,8 @@ Track.prototype = {
       browser: this.contextInfo.browser,
       session_id: this.contextInfo.session_id,
       user_id: this.contextInfo.user_id,
-      app_id: this.contextInfo.appId,
+      trackerName: this.contextInfo.trackerName,
+      trackTime: new Date().toUTCString()
 
     }
     this.sendAjaxRequest(this.url,jsonData)
