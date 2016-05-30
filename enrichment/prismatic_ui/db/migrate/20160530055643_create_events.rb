@@ -30,7 +30,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :zip_code
 
       t.string :platform
-      t.string :device
+      t.string :device_name
+      t.string :device_type
       t.string :browser
       t.string :screen_width 
       t.string :screen_height 

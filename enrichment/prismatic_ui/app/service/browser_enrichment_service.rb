@@ -1,5 +1,5 @@
 class BrowserEnrichmentService
-  attr_reader :browser,:platform,:device,:client
+  attr_reader :browser,:platform,:device,:client,:os_name
   def initialize(user_agent,locale="en-us")
     @user_agent = user_agent
     @client =  DeviceDetector.new(@user_agent)
@@ -7,6 +7,6 @@ class BrowserEnrichmentService
   def perform
     @browser = @client.name
     @device = @client.device.device_type
-    @platform = @client.os_name
+    @os_name = @client.os_name
   end
 end

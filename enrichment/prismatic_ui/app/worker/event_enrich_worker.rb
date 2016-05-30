@@ -8,7 +8,8 @@ class EventEnrichWorker
     if msg
       event_msg = JSON.parse(msg)
       if msg["browser"]
-        browser = BrowserEnrichmentService.new(event_msg["browser"]["user_agent"],event_msg["browser"]["locale"])
+        browser = BrowserEnrichmentService.new(event_msg["browser"]["user_agent"])
+        
       end  
 
       Event.create
