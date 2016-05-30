@@ -1,0 +1,33 @@
+/*
+ *= require admin/bootstrap.min
+ *= require admin/bootstrap-reset
+ *= require admin/js/advanced-datatable/media/css/demo_page
+ *= require admin/js/advanced-datatable/media/css/demo_table
+ *= require admin/js/nestable/jquery.nestable
+ *= require admin/js/data-tables/DT_bootstrap
+ *= require admin/js/bootstrap-datepicker/css/datepicker
+ *= require admin/js/bootstrap-daterangepicker/daterangepicker
+ *= require admin/js/bootstrap-datetimepicker/css/datetimepicker
+ *= require admin/style
+ *= require admin/style-responsive
+  *= require admin/js/bootstrap-wysihtml5/bootstrap-wysihtml5
+ *= require font-awesome.css
+ * require admin/bootstrap-chosen
+ *= require admin/tasks
+ *= require admin/slidebars.css
+ *= require admin/js/select2/select2
+ *= require admin/js/select2/select2-bootstrap
+ * require jquery.ui.all
+ *= require_self
+
+*/ 
+/*label.error{color:red;}*/
+.form-horizontal.tasi-form .fields {
+  border-bottom: 1px solid #eff2f7;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+#sortable tr.item {
+  cursor: row-resize;
+  
+}

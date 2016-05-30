@@ -1,7 +1,7 @@
 function Track(url,name,properties,contextInfo) {
   this.url = url;
   this.name = name;
-  this.params = properties;
+  this.properties = properties;
   this.contextInfo = contextInfo;
 }
 Track.prototype = {
@@ -9,11 +9,13 @@ Track.prototype = {
   send: function(){
     jsonData = {
       event_name: this.name,
-      properties: this.params,
+      properties: this.properties,
       context_info: this.contextInfo.context,
       browser: this.contextInfo.browser,
       session_id: this.contextInfo.session_id,
-      user_id: this.contextInfo.user_id
+      user_id: this.contextInfo.user_id,
+      app_id: this.contextInfo.appId,
+
     }
     this.sendAjaxRequest(this.url,jsonData)
   },
@@ -25,6 +27,7 @@ Track.prototype = {
       req.onreadystatechange = done;
       req.open('POST', url, true);
       for (var k in headers) req.setRequestHeader(k, headers[k]);
+      console.log(obj)   
       req.send(JSON.stringify(obj));
       function trackError(){
         // console.log(req.status)

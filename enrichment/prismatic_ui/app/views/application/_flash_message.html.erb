@@ -1,0 +1,9 @@
+
+<% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name.to_sym == :notice ? "success" : "error" %> alert-block fade in">
+       <button data-dismiss="alert" class="close close-sm" type="button">
+          <i class="fa fa-times"></i>
+      </button>
+      <%= content_tag :p, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    </div>
+<% end %>

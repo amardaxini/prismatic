@@ -1,0 +1,31 @@
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:class=>"form-signin validate_form"}) do |f| %>
+
+    <h2 class="form-signin-heading">Edit <%= resource_name.to_s.humanize %></h2>
+    <div class="login-wrap">
+      <%= devise_error_messages! %>
+        <p>Enter your personal details below</p>
+
+        <%= f.email_field "email",:class=>"form-control email2 required",:placeholder=>"Email",:autofocus=>true,"data-msg-required"=>"Please enter your email address" %>
+        <%= f.password_field "password",:class=>"form-control",:placeholder=>"Password"%>
+        <%= f.password_field "password_confirmation",:class=>"form-control",:placeholder=>"Re-type Password"%>
+        <%= f.password_field "current_password",:class=>"form-control required",:placeholder=>"current password"%>
+      
+ 
+        <button class="btn btn-lg btn-login btn-block" type="submit">Save</button>
+
+        <div class="registration">
+   
+            <a class="" href="<%= root_url%>">
+               Back to Dashboard
+            </a>
+        </div>
+
+    </div>
+
+  <% end %>
+
+</div>
+
+
+

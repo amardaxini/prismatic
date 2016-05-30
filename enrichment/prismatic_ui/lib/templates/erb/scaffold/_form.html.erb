@@ -1,0 +1,39 @@
+<div class=" form">
+  <%%= form_for(@<%= singular_table_name %>,:html=>{:class=>"cmxform form-horizontal tasi-form",:novalidate=>"novalidat"}) do |f| %>
+    <%% if @<%= singular_table_name %>.errors.any? %>
+      <div id="error_explanation">
+        <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+        <ul>
+        <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+          <li><%%= message %></li>
+        <%% end %>
+        </ul>
+      </div>
+    <%% end %>
+
+  <% attributes.each do |attribute| -%>
+    <div class="form-group ">
+  <% if attribute.password_digest? -%>
+      <%%= f.label :password %><br>
+      <%%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%%= f.label :password_confirmation %><br>
+      <%%= f.password_field :password_confirmation %>
+  <% else -%>
+        <%%= f.label :<%= attribute.column_name %> ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>,:class=>"form-control"  %>
+        </div>  
+<% end -%>
+    </div>
+  <% end -%>
+
+     <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <%%= f.submit "Save",:class=>"btn btn-danger"%>
+        </div>  
+    </div>
+  <%% end %>
+</div>

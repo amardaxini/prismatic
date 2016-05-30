@@ -6,7 +6,7 @@
   Initalize analytic
   
     PR.analytic.init({
-      app_key: "somekey",
+      appId: "savannah",
       apiUrl: "http://localhost:3007/api/v1/events",
       userId: <userid or null>
     })
@@ -18,6 +18,7 @@
     }
     
     PR.analytic.track(<event_name>,properties)
+    PR.analytic.trackPageView(properties)
 
   It will post following AJAX Request
   

@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  object_id: MyString
+  object_class: MyString
+  user_id: MyString
+  session_id: MyString
+  page_url: MyText
+  page_path: MyText
+  page_referrer: MyString
+  page_search: MyText
+  user_agent: MyString
+  ip: MyString
+  country_code: MyString
+  country_name: MyString
+  region_code: MyString
+  region_name: MyString
+  city: MyString
+  time_zone: MyString
+  latitude: 1.5
+  longitude: 1.5
+  zip_code: MyString
+  platform: MyString
+  device: MyString
+  browser: MyString
+  device_id: MyString
+  event_time: 2016-05-30 11:26:43
+  action_class: MyString
+  action_type: MyString
+
+two:
+  name: MyString
+  object_id: MyString
+  object_class: MyString
+  user_id: MyString
+  session_id: MyString
+  page_url: MyText
+  page_path: MyText
+  page_referrer: MyString
+  page_search: MyText
+  user_agent: MyString
+  ip: MyString
+  country_code: MyString
+  country_name: MyString
+  region_code: MyString
+  region_name: MyString
+  city: MyString
+  time_zone: MyString
+  latitude: 1.5
+  longitude: 1.5
+  zip_code: MyString
+  platform: MyString
+  device: MyString
+  browser: MyString
+  device_id: MyString
+  event_time: 2016-05-30 11:26:43
+  action_class: MyString
+  action_type: MyString

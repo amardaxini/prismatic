@@ -1,0 +1,184 @@
+<div class=" form">
+  <%= form_for(@event,:html=>{:class=>"cmxform form-horizontal tasi-form",:novalidate=>"novalidat"}) do |f| %>
+    <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+        <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <div class="form-group ">
+          <%= f.label :name ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :name,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :object_id ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :object_id,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :object_class ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :object_class,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :user_id ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :user_id,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :session_id ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :session_id,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :page_url ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_area :page_url,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :page_path ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_area :page_path,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :page_referrer ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :page_referrer,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :page_search ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_area :page_search,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :user_agent ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :user_agent,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :ip ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :ip,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :country_code ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :country_code,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :country_name ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :country_name,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :region_code ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :region_code,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :region_name ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :region_name,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :city ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :city,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :time_zone ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :time_zone,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :latitude ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :latitude,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :longitude ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :longitude,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :zip_code ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :zip_code,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :platform ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :platform,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :device ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :device,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :browser ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :browser,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :device_id ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :device_id,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :event_time ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.datetime_select :event_time,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :action_class ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :action_class,:class=>"form-control"  %>
+        </div>  
+    </div>
+      <div class="form-group ">
+          <%= f.label :action_type ,:class=>"control-label col-lg-2" %>
+        <div class="col-lg-6">
+          <%= f.text_field :action_type,:class=>"form-control"  %>
+        </div>  
+    </div>
+  
+     <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <%= f.submit "Save",:class=>"btn btn-danger"%>
+        </div>  
+    </div>
+  <% end %>
+</div>

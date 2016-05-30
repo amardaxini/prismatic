@@ -10,7 +10,7 @@ PR = (function(window, document, Prismatic){
     init: function(ob){
       if (!inited) {
         inited = true;
-        Prismatic.analytic.app_key = ob.app_key || Prismatic.analytic.app_key || null;
+        Prismatic.analytic.appId = ob.appId || Prismatic.analytic.appId || null;
         Prismatic.analytic.ip_address = ob.ip_address || Prismatic.ip_address || null;
         Prismatic.analytic.session_id = Prismatic.analytic.session_id || Prismatic.util.getSessionId();
         Prismatic.analytic.userId = ob.userId || null;
@@ -24,7 +24,9 @@ PR = (function(window, document, Prismatic){
     },
     track : function(eventName,properties){
       // console.log(Prismatic.analytic.contextInfo())
-
+      if(properties == undefined || properties == null){
+        properties = {}
+      }
       tracker = new Track(Prismatic.analytic.apiUrl,eventName,properties,Prismatic.analytic.contextInfo())
       tracker.send()
     },
@@ -34,14 +36,19 @@ PR = (function(window, document, Prismatic){
         browser: Prismatic.util.browserInfo(),
         session_id: Prismatic.analytic.session_id,
         user_id: Prismatic.analytic.userId,
+        appId: Prismatic.analytic.appId
 
       }
     },
     // sendXmlHttpRequest : function(path){
     //   var url = Prismatic.apiUrl + path;
     // }
-    trackPageView: function(){
-      Prismatic.analytic.track("page_view",{})
+    trackPageView: function(properties){
+      if(properties == undefined || properties == null){
+        properties = {}
+      }
+      
+      Prismatic.analytic.track("page_view",properties)
     }
 
   };

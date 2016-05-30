@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-12">
+    <section class="panel">
+      <header class="panel-heading">
+          <%= plural_table_name.titleize %>
+          <span class="pull-right">
+            <%%= link_to '+ New <%= human_name %>', new_<%= singular_table_name %>_path ,:class=>"btn btn-primary"%>
+        </span>  
+      </header> 
+      <div class="panel-body">
+        <div class="adv-table">
+          <table  class="display table table-bordered table-striped">
+            <thead>
+              
+              <tr>
+                <% attributes.reject(&:password_digest?).each do |attribute| -%>
+                  <th><%= attribute.human_name %></th>
+                <% end %>
+                <th>Manage</th>
+              </tr>
+            </thead>
+            <tbody>
+             <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+                <tr>
+                  <% attributes.reject(&:password_digest?).each do |attribute| -%>
+                    <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+                  <% end -%>
+                  
+                  <td>
+                      <%%= link_to 'Show', <%= singular_table_name %> %> |
+                      <%%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %> |
+                     <%%= link_to '<i class="fa fa-trash-o "></i> Delete'.html_safe, <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  
+                  </td>
+                </tr>
+              <%% end %>
+              
+            </tbody>
+          </table>  
+        </div>    
+      </div>  
+     </section> 
+  </div>
+</div>    
+
+
