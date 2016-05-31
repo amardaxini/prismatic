@@ -1,5 +1,8 @@
 defaults: &defaults
-  geo_ip_url: <%= ENV['GEO_IP_URL'] || 'http://prismatic-geoip.herokuapp.com/json/' %>
+  geo_ip_url: <%= ENV['GEO_IP_URL'] || 'http://prismatic-geoip.herokuapp.com/json' %>
+  elasticsearch:
+    logging: <%= ENV['ELASTICSEARCH_LOGGING'] == 'true' %>
+    tracing: <%= ENV['ELASTICSEARCH_TRACING'] == 'true' %>
 development:
   <<: *defaults
 production:

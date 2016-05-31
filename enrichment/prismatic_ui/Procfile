@@ -1,2 +1,3 @@
 web: bundle exec puma -C config/puma.rb
-worker:  ENV['JOB_WORKER'] bundle exec rake sneakers:run 
+worker:  WORKERS=EventEnrichWorker  bundle exec rake sneakers:run 
+sneaker: rake sneakers:run_worker

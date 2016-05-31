@@ -7,9 +7,10 @@ class GeoipEnrichmentService
  
   end
   def perform
-    http = Curl.get("#{Settings.geo_ip_url}/#{@ip_address}")
+    
+    http = Excon.get("#{Settings.geo_ip_url}/#{@ip_address}")
     if http.status.to_i == 200
-      response = JSON.parse(http.body_str)
+      response = JSON.parse(http.body)
       @country_code = response["country_code"]
       @country_name = response["country_name"]
       @region_code = response["region_code"]

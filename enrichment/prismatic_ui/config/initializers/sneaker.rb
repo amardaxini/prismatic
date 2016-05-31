@@ -2,11 +2,9 @@ require 'sneakers'
 # require 'sneakers/tasks'
 # Sneakers.logger.level = Logger::INFO
 Sneakers.configure amqp: (ENV['RABBITMQ_URL'] || 'amqp://guest:guest@localhost:5672'),
-                   vhost: (ENV['RABBITMQ_VHOST'] || '/'),
                    workers: (ENV['JOB_QUEUE_WORKERS'] ? ENV['JOB_QUEUE_WORKERS'].to_i : 1),
                    threads: (ENV['JOB_QUEUE_THREADS'] ? ENV['JOB_QUEUE_THREADS'].to_i : 1),
-                   :log  => './log/sneakers.log',
-                   :pid_path => './tmp/pids/sneakers.pid',
+                   :log  => 'log/sneakers.log',
                    :durable => true,
                    :ack => true,
                    #log: log, #not usable yet until we implement respond_to?(:info, :error, etc)
@@ -26,3 +24,4 @@ Sneakers.configure amqp: (ENV['RABBITMQ_URL'] || 'amqp://guest:guest@localhost:5
                    },
                    timeout_job_after: 86400
 
+ActiveJob::Base.queue_adapter = :sneakers
