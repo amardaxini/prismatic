@@ -1,144 +1,173 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.event_name %>
-</p>
+<div class="row">
+  <div class="col-lg-12">
+    <section class="panel">
+      <header class="panel-heading">
+        Event Information
+      </header> 
+      <div class="panel-body">
+        <div class="adv-table">
+          <table  class="display table table-bordered table-striped">
+            <thead>
 
-<p>
-  <strong>Object:</strong>
-  <%= @event.object_id %>
-</p>
+              <tr>
+                <th>Event Name</th>
+                <th>Object</th>
+                <th>Object class</th>
+                <th>Action Class</th>
+                <th>Action type</th>
+                <th>App ID</th>
+                <th>App Name</th>
+                <th>User ID</th>
+                <th>Session ID</th>
+                <th>Tracker Name</th>
+                <th>Event Time</th>
+                <th>Collector Event Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= @event.event_name %></td>
+                <td><%= @event.object_id %></td>
+                <td><%= @event.object_class %></td>
+                <td><%= @event.action_class %></td>
+                <td><%= @event.action_type %></td>
+                <td><%= @event.app_id %></td>
+                <td><%= @event.app_name %></td>
+                <td><%= @event.user_id %></td>
+                <td><%= @event.session_id %></td>
+                <td><%= @event.tracker_name %></td>
+                <td><%= @event.event_time %></td>
+                <td><%= @event.collector_event_time %></td>
 
-<p>
-  <strong>Object class:</strong>
-  <%= @event.object_class %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
-
-<p>
-  <strong>Session:</strong>
-  <%= @event.session_id %>
-</p>
-
-<p>
-  <strong>Page url:</strong>
-  <%= @event.page_url %>
-</p>
-
-<p>
-  <strong>Page path:</strong>
-  <%= @event.page_path %>
-</p>
-
-<p>
-  <strong>Page referrer:</strong>
-  <%= @event.page_referrer %>
-</p>
-
-<p>
-  <strong>Page search:</strong>
-  <%= @event.page_search %>
-</p>
-
-<p>
-  <strong>User agent:</strong>
-  <%= @event.user_agent %>
-</p>
-
-<p>
-  <strong>Ip:</strong>
-  <%= @event.ip_address %>
-</p>
-
-<p>
-  <strong>Country code:</strong>
-  <%= @event.country_code %>
-</p>
-
-<p>
-  <strong>Country name:</strong>
-  <%= @event.country_name %>
-</p>
-
-<p>
-  <strong>Region code:</strong>
-  <%= @event.region_code %>
-</p>
-
-<p>
-  <strong>Region name:</strong>
-  <%= @event.region_name %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
-
-<p>
-  <strong>Time zone:</strong>
-  <%= @event.time_zone %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
-
-<p>
-  <strong>Zip code:</strong>
-  <%= @event.zip_code %>
-</p>
-
-<p>
-  <strong>Platform:</strong>
-  <%= @event.platform %>
-</p>
-
-<p>
-  <strong>Device:</strong>
-  <%= @event.device_type %>
-</p>
-<p>
-  <strong>Device:</strong>
-  <%= @event.device_name %>
-</p>
-<p>
-  <strong>Os:</strong>
-  <%= @event.os_name %>
-</p>
-
-<p>
-  <strong>Browser:</strong>
-  <%= @event.browser %>
-</p>
-
-
-
-<p>
-  <strong>Event time:</strong>
-  <%= @event.event_time %>
-</p>
-
-<p>
-  <strong>Action class:</strong>
-  <%= @event.action_class %>
-</p>
-
-<p>
-  <strong>Action type:</strong>
-  <%= @event.action_type %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+              </tr>
+            </tbody>
+          </table>
+          <header class="panel-heading">
+            Page Information
+          </header>
+          <div class="panel-body">
+            <div class="adv-table">
+              <table class="display table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Page URL</th>
+                    <th>Page Path</th>
+                    <th>Page Referrer</th>
+                    <th>Page Search</th>
+                    <th>User Agent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= @event.page_url %></td>
+                    <td><%= @event.page_path %></td>
+                    <td><%= @event.page_referrer %></td>
+                    <td><%= @event.page_search %></td>
+                    <td><%= @event.user_agent %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+              <header class="panel-heading">
+                Geo Information
+              </header>
+              <div class="panel-body">
+                <div class="adv-table">
+                <table class="display table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>IP Address</th>
+                      <th>Country Code</th>
+                      <th>Country Name</th>
+                      <th>Region Code</th>
+                      <th>Region Name</th>
+                      <th>City</th>
+                      <th>Time Zone</th>
+                      <th>Latitude</th>
+                      <th>Longitude</th>
+                      <th>Zip Code</th>
+                      <th>Platform</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><%= @event.ip_address %></td>
+                      <td><%= @event.country_code %></td>
+                      <td><%= @event.country_name %></td>
+                      <td><%= @event.region_code %></td>
+                      <td><%= @event.region_name %></td>
+                      <td><%= @event.city %></td>
+                      <td><%= @event.time_zone %></td>
+                      <td><%= @event.latitude %></td>
+                      <td><%= @event.longitude %></td>
+                      <td><%= @event.zip_code %></td>
+                      <td><%= @event.platform %></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <header class="panel-heading">
+              Device Information
+            </header>
+            <div class="panel-body">
+              <div class="adv-table">
+              <table class="display table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Device Name</th>
+                    <th>Device Type</th>
+                    <th>Browser</th>
+                    <th>Screen Width</th>
+                    <th>Screen Height</th>
+                    <th>OS Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= @event.device_name %></td>
+                    <td><%= @event.device_type %></td>
+                    <td><%= @event.browser %></td>
+                    <td><%= @event.screen_width %></td>
+                    <td><%= @event.screen_height %></td>
+                    <td><%= @event.os_name %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <header class="panel-heading">
+            Properties
+          </header>
+            <div class="panel-body">
+              <div class="adv-table">
+                <table class="display table table-bordered table-striped">
+                  <thead>
+                      <tr>
+                        <% @event.properties.each_pair do |key,value| %>
+                          <th> <%= key %> </th>
+                        <% end %>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <% @event.properties.each_pair do |key,value| %>
+                          <td> <%= value %> </td>
+                        <% end %>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <%= link_to 'Edit', edit_event_path(@event) %> |
+            <%= link_to 'Back', events_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+</div>
