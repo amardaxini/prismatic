@@ -40,9 +40,15 @@
             </tr>
             <% end %>
 
+ 
           </tbody>
         </table>  
-      </div>    
+          <hr />
+          <%= page_entries_info @events %> 
+          <div class="pull-right pagination-wrapper">   
+            <%= paginate @events %>
+          </div>
+      </div>
     </div>  
   </section> 
 </div>
