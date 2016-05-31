@@ -28,7 +28,7 @@
             <tbody>
              <% @events.each do |event| %>
              <tr>
-              <td><%=link_to event.name,event_path(event) %></td>
+              <td><%=link_to event.event_name,event_path(event) %></td>
               <td><%= event.object_id %></td>
               <td><%= event.object_class %></td>
               <td><%= event.user_id %></td>
