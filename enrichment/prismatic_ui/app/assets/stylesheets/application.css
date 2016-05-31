@@ -31,3 +31,7 @@
   cursor: row-resize;
   
 }
+
+.pagination-wrapper nav.pagination {
+  margin-top: 0;
+}
