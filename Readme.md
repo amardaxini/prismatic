@@ -6,7 +6,7 @@
   Initalize analytic
   
     PR.analytic.init({
-      trackerName: "savannah",
+      trackerName: "app_name",
       apiUrl: "http://localhost:3007/api/v1/events",
       userId: <userid or null>
     })

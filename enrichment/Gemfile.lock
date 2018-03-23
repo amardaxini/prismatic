@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     amq-protocol (2.0.1)
+    browser (2.5.3)
     bunny (2.2.2)
       amq-protocol (>= 2.0.1)
     json (1.8.3)
@@ -20,8 +21,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser
   json
   sneakers
 
 BUNDLED WITH
-   1.11.2
+   1.16.0
